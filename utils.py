@@ -48,4 +48,23 @@ def get_comments_by_post_id(post_id):
     if search == 0:
         return ValueError  # ДОРАБОТАТЬ ОШИБКУ КАК ДОЛЖНО БЫТЬ
     return comments
+
+
+def search_for_posts(query):
+    #  возвращает список постов по ключевому слову
+    posts = read_json(file_posts)
+    list_posts = []
+    for post in posts:
+        if query in post["content"]:
+            list_posts.append(post["content"])
+    return list_posts
+
+
+def get_post_by_pk(pk):
+    #  возвращает пост по по рк
+    posts = read_json(file_posts)
+    for post in posts:
+        if pk == post["pk"]:
+            return post["content"]
+
 pprint.pprint(get_posts_by_user('hаваk'),indent=2)
