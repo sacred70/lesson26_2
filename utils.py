@@ -43,7 +43,7 @@ def get_comments_by_post_id(post_id):
     search = 0  # определяет наличие
     for comment in list_comments:
         if comment["post_id"] == post_id:
-            comments.append(comment["comment"])
+            comments.append(comment)
             search = 1
     if search == 0:
         return "ERROR ValueError"  # ДОРАБОТАТЬ ОШИБКУ КАК ДОЛЖНО БЫТЬ

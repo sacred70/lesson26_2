@@ -12,8 +12,7 @@ file_bookmarks = "templates/bookmarks.json"
 def get_post(pk):
     post = utils.get_post_by_pk(pk)
     comments = utils.get_comments_by_post_id(pk)
-    print(pk)
-    print(post)
-    print(comments)
+    len_comments = len(comments)
 
-    return render_template("post.html", post=post, comments=comments)
+
+    return render_template("post.html", post=post, comments=comments, len_comments=len_comments)
