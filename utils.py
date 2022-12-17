@@ -56,7 +56,7 @@ def search_for_posts(query):
     list_posts = []
     for post in posts:
         if query in post["content"]:
-            list_posts.append(post["content"])
+            list_posts.append(post)
     return list_posts
 
 
