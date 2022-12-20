@@ -9,11 +9,12 @@ file_bookmarks = "templates/bookmarks.json"
 
 
 @search_blueprint.route("/search")
-#  выводит все посты
+#  выводит все посты по ключевому слову
 def search():
     s = request.args['s']
     posts = utils.search_for_posts(s)
+    count = len(posts)
     print(s)
     print(posts)
 
-    return render_template("search.html")
+    return render_template("search.html", count=count, posts=posts, s=s.lower())

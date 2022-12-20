@@ -29,7 +29,7 @@ def get_posts_by_user(user_name):
     search = 0  #  определяет наличие автора
     for post in posts:
         if post['poster_name'].lower() == user_name.lower():
-            user_posts.append(post['content'])
+            user_posts.append(post)
             search = 1
     if search == 0:
         return "ERROE ValueError" #  ДОРАБОТАТЬ ОШИБКУ КАК ДОЛЖНО БЫТЬ
@@ -54,9 +54,11 @@ def search_for_posts(query):
     #  возвращает список постов по ключевому слову
     posts = read_json(file_posts)
     list_posts = []
+    count = 0
     for post in posts:
-        if query in post["content"]:
+        if query in post["content"] and count<10:
             list_posts.append(post)
+            count+=1
     return list_posts
 
 
