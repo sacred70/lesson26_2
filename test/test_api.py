@@ -1,12 +1,12 @@
-import pytest
+#import pytest
 from api.utils import json_posts, post_pk
 
 
-def test_load_posts():
-    assert type(json_posts()) == list
-
-
 list_keys = ['poster_name', 'poster_avatar', 'pic', 'content', 'views_count', 'likes_count', 'pk']
+
+
+def test_json_posts():
+    assert type(json_posts()) == list, print(type(json_posts()))
 
 
 def test_keys_json_posts():

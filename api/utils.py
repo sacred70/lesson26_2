@@ -8,7 +8,7 @@ def json_posts():
 
 
 def post_pk(pk):
-    posts = load_posts()
+    posts = json_posts()
     for post in posts:
         if post['pk'] == pk:
             return post
