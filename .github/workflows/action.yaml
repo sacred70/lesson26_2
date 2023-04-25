@@ -1,0 +1,10 @@
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone code
+        uses: actions/checkout@v2
+      - name: build
+        run: docker build -t sacred70/lesson26:$GITHUB_REF_NAME-$GITHUB_RUN_ID .

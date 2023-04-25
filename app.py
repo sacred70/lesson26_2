@@ -5,7 +5,6 @@ from search.app import search_blueprint
 from all_posts_user.app import all_posts_user_blueprint
 from api.app import api_blueprint
 
-
 app = Flask(__name__)
 app.register_blueprint(ribbon_blueprint)
 app.register_blueprint(post_blueprint)
@@ -24,5 +23,6 @@ def page_not_found(e):
 def page_not_found(e):
     #  форма вывода ошибки 500
     return render_template('500.html')
+
 
 app.run()
