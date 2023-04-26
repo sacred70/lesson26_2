@@ -48,7 +48,7 @@ def get_comments_by_post_id(post_id):
             search = 1
     '''
     
-        return "ERROR ValueError"  
+        return "ERROR Error"  
         '''
     return comments
 
