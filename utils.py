@@ -47,7 +47,7 @@ def get_comments_by_post_id(post_id):
             comments.append(comment)
             search = 1
     '''
-    if search == 0:
+    
         return "ERROR ValueError"  
         '''
     return comments
