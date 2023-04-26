@@ -19,8 +19,10 @@ services:
       - POSTGRES_PASSWORD=db_password
       - POSTGRES_USER=db_user
       - POSTGRES_DB=db_name
-    healthcheck:
-      test: /usr/bin/pg_isready
-      interval: 5s
-      timeout: 12s
-      retries: 120
+    ports:
+      - 5436:5432
+    #healthcheck:
+      #test: /usr/bin/pg_isready
+      #interval: 5s
+      #timeout: 12s
+      #retries: 120
